@@ -1,0 +1,15 @@
+{
+  "name": "DevToolsTestController",
+  "version": "0.1",
+  "minimum_chrome_version": "20",
+  "description": "DevTools Test Driver in DevTools",
+  //"background_page" : "background.html",
+  // Assigns the name 'fkhgelnmojgnpahkeemhnbjndeeocehc',
+  // see http://code.google.com/chrome/extensions/manifest.html#key
+   "devtools_page": "devtools.html",
+  "permissions" :
+    [
+      "*://*/*",
+      "debugger"
+    ] 
+}
