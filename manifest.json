@@ -3,13 +3,24 @@
   "version": "0.1",
   "minimum_chrome_version": "20",
   "description": "DevTools Test Driver in DevTools",
-  //"background_page" : "background.html",
-  // Assigns the name 'fkhgelnmojgnpahkeemhnbjndeeocehc',
-  // see http://code.google.com/chrome/extensions/manifest.html#key
-   "devtools_page": "devtools.html",
+  "options_page" : "options.html",
+  "background": {
+    "scripts": ["background.js"]
+  },    
   "permissions" :
     [
       "*://*/*",
-      "debugger"
-    ] 
+      "tabs"
+    ],
+   "content_scripts": [
+     {
+       "matches": ["*://*/third_party/WebKit/LayoutTests/inspector/*"],
+       "js": ["sendTestcases.js"]
+     },
+     {
+       "matches": ["*://*/*atopwi.html*"],
+       "js": ["receiveTestcases.js"],
+       "all_frames": true
+     }
+   ]
 }
